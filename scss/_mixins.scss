@@ -1,0 +1,48 @@
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $top $left $blur $color;
+    -moz-box-shadow:inset $top $left $blur $color;
+    box-shadow:inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}
+
+@mixin border-radius($radius: 0.5em) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin gradient($from, $to) {
+  background: -webkit-gradient(linear, left top, left bottom, from($from), to($to));
+  background: -moz-linear-gradient(top,  $from, $to);
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$from}', endColorstr='#{$to}');
+}
+
+@mixin transition($transition-property, $transition-time, $method, $delay: 0) {
+  -webkit-transition: $transition-property $transition-time $method $delay;
+  -moz-transition: $transition-property $transition-time $method $delay;
+  -ms-transition: $transition-property $transition-time $method $delay;
+  -o-transition: $transition-property $transition-time $method $delay;
+  transition: $transition-property $transition-time $method $delay;
+}
+
+@mixin rotate($deg: 0, $m11: 0, $m12: 0, $m21: 0, $m22: 0) {
+  -moz-transform: rotate($deg + deg);
+  -o-transform: rotate($deg + deg);
+  -webkit-transform: rotate($deg + deg);
+  -ms-transform: rotate($deg + deg);
+  transform: rotate($deg + deg);
+  filter: progid:DXImageTransform.Microsoft.Matrix(
+  M11=#{$m11}, M12=#{$m12}, M21=#{$m21}, M22=#{$m22}, sizingMethod='auto expand');
+  zoom: 1;
+}
+
+@mixin transform($params) {
+  -webkit-transform: $params;
+  -moz-transform:    $params;
+  transform:         $params;
+}
