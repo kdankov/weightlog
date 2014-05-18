@@ -10,17 +10,21 @@ body {
 	padding: 20px 0 0 20px; 
 }
 
+svg {
+	border: 1px solid #CCC;
+}
+
 .axis {
 	path, line {
 		fill: none;
-		stroke: #000;
+		stroke: #999;
 		shape-rendering: crispEdges;
 	}
 }
 
 .line {
   fill: none;
-  stroke: steelblue;
+  stroke: #090;
   stroke-width: 1.5px;
 }
 
