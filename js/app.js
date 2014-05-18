@@ -25,6 +25,6 @@ $(function(){
       height: heightScale,
       x: function(d, i) { return i * (barWidth + 1); },
       y: function(d, i) { return wHeight - heightScale(d)  },
-      fill: "orange"
+      fill: "blue"
     });
 });
